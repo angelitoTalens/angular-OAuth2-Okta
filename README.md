@@ -10,7 +10,7 @@ https://dev-991706.okta.com/
 
 # How to:
  * Create an Okta account
- * Add an your application to your Okta Console
+ * Add your application to your Okta Console
  * in your environment.ts/environment.prod.ts add
  
  ```typescript
