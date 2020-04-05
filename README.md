@@ -1,4 +1,4 @@
-# OAuth2 Login Deme
+# OAuth2 Login Demo
 
 Angular Demo Project for OAuth2 login using Okta server
 
