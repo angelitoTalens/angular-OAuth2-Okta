@@ -13,11 +13,15 @@ export class AuthService {
     return from(this.oktaAuth.isAuthenticated())
   }
 
-  login() {
-    this.oktaAuth.login('/home');
+  login() {    
+    this.oktaAuth.signInWithRedirect({
+      originalUri: '/home'
+    });
   }
 
-  logout() {
-    this.oktaAuth.logout('/');
+  logout() {    
+    this.oktaAuth.signOut({
+      originalUri: '/'
+    })
   }
 }

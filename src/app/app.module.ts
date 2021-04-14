@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OktaAuthModule } from '@okta/okta-angular';
+import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { environment } from 'src/environments/environment';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -14,12 +14,14 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     HomeComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     AppRoutingModule,
-    OktaAuthModule.initAuth(environment.oktaConfig)
+    OktaAuthModule
   ],
-  providers: [],
+  providers: [
+    { provide: OKTA_CONFIG, useValue: environment.oktaConfig },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

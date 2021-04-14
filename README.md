@@ -8,6 +8,10 @@ https://dev-991706.okta.com/
 # Add Okta Auth Angular SDK
  > npm install @okta/okta-angular
 
+
+# okta-angular version used
+@okta/okta-angular": "3.0.1"
+
 # How to:
  * Create an Okta account
  * Add your application to your Okta Console
@@ -24,8 +28,11 @@ https://dev-991706.okta.com/
  * In your app.module.ts
  ```typescript 
   imports: [
-    OktaAuthModule.initAuth(environment.oktaConfig)
-  ]
+    OktaAuthModule
+  ],
+  providers: [
+    { provide: OKTA_CONFIG, useValue: environment.oktaConfig },
+  ],
   ```
   # Usage
   * Use OktaAuthService and OktaAuthGuard directly
